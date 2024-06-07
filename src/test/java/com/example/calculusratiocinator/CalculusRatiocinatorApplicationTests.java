@@ -1,9 +1,6 @@
 package com.example.calculusratiocinator;
 
-import com.example.calculusratiocinator.affirmation.Affirmation;
-import com.example.calculusratiocinator.affirmation.Conjonction;
-import com.example.calculusratiocinator.affirmation.Mensonge;
-import com.example.calculusratiocinator.affirmation.Vérité;
+import com.example.calculusratiocinator.affirmation.*;
 
 class CalculusRatiocinatorApplicationTests {
 
@@ -16,14 +13,12 @@ class CalculusRatiocinatorApplicationTests {
     }
 
     public static void testerAffirmation(Vérité verite1, Mensonge mensonge1, Affirmation affirmation1) {
-        evaluer(new Conjonction(mensonge1, affirmation1, "et"));
-        evaluer(new Conjonction(verite1, mensonge1, "donc"));
-        evaluer(new Conjonction(mensonge1, affirmation1, "donc"));
-        evaluer(new Conjonction(new Conjonction(verite1, affirmation1, "ou"), mensonge1, "donc"));
-        evaluer(new Conjonction(
-                new Conjonction(new Conjonction(verite1, affirmation1, "ou"), mensonge1, "donc"),
-                new Conjonction(mensonge1, affirmation1, "ou"),
-                "et"));
+        evaluer(new Et(mensonge1, affirmation1));
+        evaluer(new Donc(verite1, mensonge1));
+        evaluer(new Donc(mensonge1, affirmation1));
+        evaluer(new Donc(new Ou(verite1, affirmation1), mensonge1));
+        evaluer(new Et(new Ou(verite1, affirmation1), mensonge1));
+
     }
 
     public static void evaluer(Conjonction conjonction) {
