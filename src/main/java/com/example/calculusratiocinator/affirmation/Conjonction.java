@@ -9,8 +9,8 @@ public abstract class Conjonction extends AffirmationParent{
     private AffirmationParent premièreAffirmationParent;
     private AffirmationParent deuxièmeAffirmationParent;
 
-    public Conjonction(String affirmation, AffirmationParent premièreAffirmationParent,
-                       AffirmationParent deuxièmeAffirmationParent) {
+    public Conjonction(AffirmationParent premièreAffirmationParent,
+                       AffirmationParent deuxièmeAffirmationParent, String affirmation) {
         super(affirmation);
         this.premièreAffirmationParent = premièreAffirmationParent;
         this.deuxièmeAffirmationParent = deuxièmeAffirmationParent;
