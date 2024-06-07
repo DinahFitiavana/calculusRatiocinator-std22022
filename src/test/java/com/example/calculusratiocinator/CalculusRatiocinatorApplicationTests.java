@@ -1,13 +1,7 @@
 package com.example.calculusratiocinator;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.example.calculusratiocinator.affirmation.Conjonction;
 
-@SpringBootTest
 class CalculusRatiocinatorApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
 
 }
